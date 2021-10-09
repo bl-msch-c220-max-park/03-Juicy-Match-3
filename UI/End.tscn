@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/LEMONMILK-Regular.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/s4m_ur4i-bg_clouds.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Bouncy-PERSONAL_USE_ONLY.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://UI/End.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 46
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[node name="End" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -307.53, -54.8072 )
+scale = Vector2( 3.42665, 3.42665 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Label" type="Label" parent="."]
+margin_left = 3.07581
+margin_top = 159.701
+margin_right = 587.076
+margin_bottom = 285.701
+custom_fonts/font = SubResource( 1 )
+text = "You DID IT!
+
+Thanks For Playing :)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayAgain" type="Button" parent="."]
+margin_left = 214.409
+margin_top = 309.599
+margin_right = 328.409
+margin_bottom = 337.599
+custom_fonts/font = SubResource( 2 )
+text = "Play Again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndGame" type="Button" parent="."]
+margin_left = 214.409
+margin_top = 363.201
+margin_right = 328.409
+margin_bottom = 391.201
+custom_fonts/font = SubResource( 2 )
+text = "End Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PlayAgain" to="." method="_on_PlayAgain_pressed"]
+[connection signal="pressed" from="EndGame" to="." method="_on_EndGame_pressed"]
